@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta property="fb:app_id" content="920841141333066"/>
     <meta property="og:title" content="TinyOwl | Food delivery | Dishes"/>
-    <meta property="og:url" content="https://play.google.com/store/apps/details?id=com.flutterbee.tinyowl"/>
+    <meta property="og:url" content="https://tinyowl.com"/>
     <meta property="og:description" content="Your simplest way to food."/>
     <meta property="og:image" content="https://tinyowl.com/tinyowl-og.jpg"/>
     <meta content="TinyOwl" property="og:site_name"/>
@@ -21,6 +21,34 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-	<script>window.location = "https://play.google.com/store/apps/details?id=com.flutterbee.tinyowl";</script>
+	<script>
+    /**
+     * Determine the mobile operating system.
+     * This function either returns 'iOS', 'Android' or 'unknown'
+     *
+     * @returns {String}
+     */
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+      {
+        return "https://itunes.apple.com/IN/app/id916154166?mt=8";
+
+      }
+      else if( userAgent.match( /Android/i ) )
+      {
+
+        return "https://play.google.com/store/apps/details?id=com.flutterbee.tinyowl";
+      }
+      else
+      {
+        return "https://tinyowl.com";
+      }
+    }
+
+
+    window.location = getMobileOperatingSystem();
+	</script>
   </body>
 </html>
